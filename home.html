@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <title>NYC COVID Tracker</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="text/css" href="static/css/w3.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="static/css/covid.css" rel="stylesheet">
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="container" style="max-width: 960px;">
+                <!-- Top Nav Bar -->
+                <nav class="navbar fixed-top navbar-light bg-light navbar-expand-md" id="topbar">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse w-100 order-3 dual-collapse2" id="navbarNavAltMarkup">
+                        <!-- Nav Bar Contents -->
+                        <div class="navbar-nav ml-auto">
+                            <a class="nav-link active" aria-current="page" href="#"><h4>Home</h4></a>
+                            <a class="nav-link" href="#"><h4>Statistics</h4></a>
+                            <a class="nav-link" href="#"><h4>Regressions</h4></a>
+                        </div>
+                    </div>
+                </nav>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-lg-12 page-header px-3 py-8 pt-md-5 pb-md-4 mx-auto text-center" href="#">
+                            <h2>NYC COVID-19 Dashboard</h2>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row no-gutters justify-content-center">
+                    <div class="col-md-3 col-sm-12 card text-center border-0" id="card_cases" style="max-width: 20rem;">
+                        <div class="card-header bg-light">
+                            Total Cases
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">154,345</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 card text-center border-0" id="card_deaths" style="max-width: 20rem;">
+                        <div class="card-header bg-light">
+                            Total Deaths
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">54,323</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 card text-center border-0" id="card_avg" style="max-width: 20rem;">
+                        <div class="card-header bg-light">
+                            7-Day Average
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">1,452</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Map -->
+                        <div align="center" id="content" class="container">
+                            <iframe name="main-map" class="map" frameborder="0" src="http://www.danleedata.com/map"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-12" style="max-width: 49rem;">
+                        <table class="table" id='table_zipcode'>
+                            <thead class="bg-light">
+                                <tr>
+                                <th scope="col">Zip Code</th>
+                                <th scope="col">Cases</th>
+                                <th scope="col">Deaths</th>
+                                <th scope="col">Cases Rate</th>
+                                <th scope="col">7 Day Average</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table_list">
+                                <tr>
+                                <th scope="row">10001</th>
+                                <td>100</td>
+                                <td>50</td>
+                                <td>20</td>
+                                <td>10</td>
+                                </tr>
+                                <tr>
+                                <th scope="row">10002</th>
+                                <td>100</td>
+                                <td>50</td>
+                                <td>20</td>
+                                <td>10</td>
+                                </tr>
+                                <tr>
+                                <th scope="row">10003</th>
+                                <td>100</td>
+                                <td>50</td>
+                                <td>20</td>
+                                <td>10</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container">
+
+            </div>
+
+
+
+
+
+        </div>
+
+		<!-- Footer -->
+        <footer align="center" id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="https://www.linkedin.com/in/danielslee1/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="https://github.com/Dan-S-Lee" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                    <!-- <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                    <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li> -->
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; Daniel Lee</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <!-- Scripts -->
+        <script src="static/js/jquery.min.js"></script>
+        <script src="static/js/jquery.poptrox.min.js"></script>
+        <script src="static/js/browser.min.js"></script>
+        <script src="static/js/breakpoints.min.js"></script>
+        <script src="static/js/util.js"></script>
+        <script src="static/js/main.js"></script>
+    </body>
+
+</html>
